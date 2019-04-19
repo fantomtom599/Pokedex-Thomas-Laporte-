@@ -1,0 +1,21 @@
+<mat-card *ngIf='pokemon' class="pokedex">
+  <audio autoplay src="../../assets/assets/audio/{{pokemon.id}}.mp3"></audio>
+  <mat-grid-list class="pokedex-list" cols="2" rows="2" rowHeight="200px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <img matListAvatar src="../assets/assets/img/official-artwork/{{pokemon.id}}.png" alt="...">
+      <mat-card-title class='poke-id'>No {{pokemon.id}}</mat-card-title>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <ul>
+        <li><mat-card-title>{{pokemon.name}}</mat-card-title></li>
+        <li><mat-card-content>{{pokemon.type}}</mat-card-content></li>
+        <li><mat-card-content><b>Taille: </b> {{pokemon.height}} m </mat-card-content></li>
+        <li><mat-card-content><b>Poid: </b> {{pokemon.weight}} Kg </mat-card-content></li>
+      </ul>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2"  [rowspan]="1">
+      <mat-card-content>{{pokemon.description}}</mat-card-content>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>
